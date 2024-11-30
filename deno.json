@@ -1,4 +1,6 @@
 {
+  "name": "@aminnairi/markdown-table-align",
+  "version": "0.1.0",
   "compilerOptions": {
     "strict": true
   }
