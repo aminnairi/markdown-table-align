@@ -27,11 +27,54 @@ Where `~/.local/bin` is the folder containing your binaries.
 ### With argument
 
 ```bash
+cat example.md
+```
+
+```text
+| ID | Name | Category ID |
+| 11092 | Gorilla Fist | 27 |
+| 11212 | Plate 3 x 3 | 14 |
+| 11209 | Tyre 21 x 9.9 | 29 |
+| 11640pr0003 | ELECTRIC GUITAR SHAFT Ø3.2 NO. 3 | 27 |
+```
+
+```bash
 markdown-table-align example.md
+```
+
+```
+ID          | Name                             | Category ID
+----------- | -------------------------------- | -----------
+11092       | Gorilla Fist                     | 27         
+11212       | Plate 3 x 3                      | 14         
+11209       | Tyre 21 x 9.9                    | 29         
+11640pr0003 | ELECTRIC GUITAR SHAFT Ø3.2 NO. 3 | 27
 ```
 
 ### With pipe
 
 ```bash
+cat example.md
+```
+
+```text
+| ID | Name | Category ID |
+| 11092 | Gorilla Fist | 27 |
+| 11212 | Plate 3 x 3 | 14 |
+| 11209 | Tyre 21 x 9.9 | 29 |
+| 11640pr0003 | ELECTRIC GUITAR SHAFT Ø3.2 NO. 3 | 27 |
+```
+
+
+```bash
 cat example.md | markdown-table-align
+```
+
+```
+ID          | Name                             | Category ID
+----------- | -------------------------------- | -----------
+11092       | Gorilla Fist                     | 27         
+11212       | Plate 3 x 3                      | 14         
+11209       | Tyre 21 x 9.9                    | 29         
+11640pr0003 | ELECTRIC GUITAR SHAFT Ø3.2 NO. 3 | 27
 ```
