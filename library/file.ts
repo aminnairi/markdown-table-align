@@ -1,10 +1,10 @@
-import { readFile } from "node:fs/promises";
-
 export async function getFileContent(path: string): Promise<string | undefined> {
-  try {
-    const fileContent = (await readFile(path)).toString();
+    try {
+    const decoder = new TextDecoder("UTF-8");
+    const encoded = await Deno.readFile(path);
+    const content = decoder.decode(encoded);
 
-    return fileContent;
+    return content;
   } catch {
     return undefined;    
   }

@@ -2,7 +2,7 @@ import { getFileContent } from "./library/file.ts";
 import { getStandardInput } from "./library/process.ts";
 import { transpose, getLines, getColumns } from "./library/string.ts";
 
-const fileContent = await getFileContent(process.argv[2]) ?? await getStandardInput();
+const fileContent = await getFileContent(Deno.args[2]) ?? await getStandardInput();
 
 const columnSeparator = "|";
 
@@ -11,7 +11,7 @@ const lines = getLines(fileContent).map(line => {
 });
 
 if (lines.length === 0 ) {
-  process.exit(0);
+  Deno.exit(0);
 }
 
 const transposedLinesWithColumns = transpose(lines);
