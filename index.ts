@@ -2,7 +2,7 @@ import { getFileContent } from "./library/file.ts";
 import { getStandardInput } from "./library/process.ts";
 import { transpose, getLines, getColumns } from "./library/string.ts";
 
-const fileContent = await getFileContent(Deno.args[2]) ?? await getStandardInput();
+const fileContent = await getFileContent(Deno.args[0]) ?? await getStandardInput();
 
 const columnSeparator = "|";
 
