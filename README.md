@@ -14,6 +14,7 @@ Align your markdown table
 
 ```bash
 deno run jsr:@aminnairi/markdown-table-align example.md
+cat example.md | deno run jsr:@aminnairi/markdown-table-align
 ```
 
 ### With compilation
