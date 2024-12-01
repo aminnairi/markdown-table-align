@@ -10,6 +10,19 @@ function isSeparationLine(line: string[]): boolean {
   });
 }
 
+function padArray<Item>(items: Item[], length: number, item: Item): Item[] {
+  const itemsLength = items.length
+
+  if (itemsLength >= length) {
+    return items
+  }
+
+  return [
+    ...items,
+    ...Array.from(Array(length - itemsLength)).map(() => item)
+  ]
+}
+
 export function alignMarkdownTable(separator: string, content: string): string {
   const lines = getLines(content).map(line => {
     return getColumns(separator, line);
@@ -21,7 +34,15 @@ export function alignMarkdownTable(separator: string, content: string): string {
     return "";
   }
 
-  const transposedLinesWithColumns = transpose(lines);
+  const largestLineLength = Math.max(...lines.map(line => {
+    return line.length;
+  }));
+
+  const paddedLines = lines.map(line => {
+    return padArray(line, largestLineLength, "");
+  });
+
+  const transposedLinesWithColumns = transpose(paddedLines);
 
   const largestColumns = transposedLinesWithColumns.map(columns => {
     return Math.max(...columns.map(column => {
@@ -29,18 +50,19 @@ export function alignMarkdownTable(separator: string, content: string): string {
     }));
   });
 
+
   const separationLine = largestColumns.map(largestColumn => {
     return "-".repeat(largestColumn - 1) + "-";
   });
 
-  const paddedLines = lines.map(columns => {
-    return columns.map((column, columnIndex) => {
-      const padding = largestColumns[columnIndex];
+  const paddedLinesWithColumns = lines.map(columns => {
+    return padArray(columns, largestLineLength, "").map((column, columnIndex) => {
+      const padding = largestColumns[columnIndex] ?? 0;
       return column.padEnd(padding, " ");
-    });
+    })
   });
 
-  const joinedLines = paddedLines.map(columns => {
+  const joinedLines = paddedLinesWithColumns.map(columns => {
     return columns.join(` ${separator} `);
   });
 
