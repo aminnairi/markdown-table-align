@@ -33,7 +33,9 @@ Where `~/.local/bin` is the folder containing your binaries.
 
 ## Usage
 
-### With argument
+### Command line interface
+
+#### With argument
 
 ```bash
 cat example.md
@@ -60,7 +62,7 @@ ID          | Name                             | Category ID
 11640pr0003 | ELECTRIC GUITAR SHAFT Ø3.2 NO. 3 | 27
 ```
 
-### With pipe
+#### With pipe
 
 ```bash
 cat example.md
@@ -86,6 +88,30 @@ ID          | Name                             | Category ID
 11212       | Plate 3 x 3                      | 14         
 11209       | Tyre 21 x 9.9                    | 29         
 11640pr0003 | ELECTRIC GUITAR SHAFT Ø3.2 NO. 3 | 27
+```
+
+## Library
+
+```bash
+deno add jsr:@aminnairi/markdown-table-align
+```
+
+```typescript
+import { alignMarkdownTable } from "@aminnairi/markdow-table-align"
+
+const separator = "|"
+
+const content = `
+| ID | Name | Category ID |
+| 11092 | Gorilla Fist | 27 |
+| 11212 | Plate 3 x 3 | 14 |
+| 11209 | Tyre 21 x 9.9 | 29 |
+| 11640pr0003 | ELECTRIC GUITAR SHAFT Ø3.2 NO. 3 | 27 |
+`
+
+const aligned = alignMarkdownTable(separator, content)
+
+console.log(aligned)
 ```
 
 ## License
