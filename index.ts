@@ -1,18 +1,7 @@
 import { getFileContent } from "./library/file.ts";
 import { getStandardInput } from "./library/process.ts";
 import { transpose, getLines, getColumns } from "./library/string.ts";
-function padArray<Item>(items: Item[], length: number, item: Item): Item[] {
-  const itemsLength = items.length
-
-  if (itemsLength >= length) {
-    return items
-  }
-
-  return [
-    ...items,
-    ...Array.from(Array(length - itemsLength)).map(() => item)
-  ]
-}
+import { padArray, isSeparationLine } from "./library/array.ts";
 
 export function alignMarkdownTable(separator: string, content: string): string {
   const lines = getLines(content).map(line => {
