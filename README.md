@@ -92,3 +92,7 @@ ID          | Name                             | Category ID
 
 See [`LICENSE`](./LICENSE).
 
+## Contributing
+
+See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
+
