@@ -5,8 +5,8 @@ Align your markdown table
 ## Requirements
 
 - [Deno](https://deno.com/)
-- [Git](https://git-scm.com/)
-- [Bash](https://www.gnu.org/software/bash/), or [Zsh](https://www.zsh.org/), or [Fish](https://fishshell.com/), or any GNU/Linux shell
+- [Git](https://git-scm.com/) (for local binary compilation)
+- [Bash](https://www.gnu.org/software/bash/), or [Zsh](https://www.zsh.org/), or [Fish](https://fishshell.com/), or any GNU/Linux shell (for usage with a binary)
 
 ## Installation
 
