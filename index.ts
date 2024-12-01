@@ -1,15 +1,6 @@
 import { getFileContent } from "./library/file.ts";
 import { getStandardInput } from "./library/process.ts";
 import { transpose, getLines, getColumns } from "./library/string.ts";
-
-function isSeparationLine(line: string[]): boolean {
-  return line.every(column => {
-    return column.trim().split("").every(character => {
-      return character === "-";
-    });
-  });
-}
-
 function padArray<Item>(items: Item[], length: number, item: Item): Item[] {
   const itemsLength = items.length
 
