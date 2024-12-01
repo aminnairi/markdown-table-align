@@ -96,3 +96,6 @@ See [`LICENSE`](./LICENSE).
 
 See [`CONTRIBUTING.md`](./CONTRIBUTING.md).
 
+## Security Policy
+
+See [`SECURITY.md`](./SECURITY.md).
