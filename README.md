@@ -8,17 +8,25 @@ Align your markdown table
 - [Git](https://git-scm.com/)
 - [Bash](https://www.gnu.org/software/bash/), or [Zsh](https://www.zsh.org/), or [Fish](https://fishshell.com/), or any GNU/Linux shell
 
-## Clone
-
-```bash
-git clone https://github.com/aminnairi/markdown-table-align
-cd markdown-table-align
-```
-
 ## Installation
 
+### With Deno
+
 ```bash
+deno run jsr:@aminnairi/markdown-table-align example.md
+```
+
+### With compilation
+
+```bash
+# Clone the repository
+git clone https://github.com/aminnairi/markdown-table-align
+# Change the current directory
+cd markdown-table-align
+# Compile the binary
 deno compile --allow-read --output ~/.local/bin index.ts
+# Run the compiled binary
+markdown-table-align example.md
 ```
 
 Where `~/.local/bin` is the folder containing your binaries.
@@ -79,3 +87,4 @@ ID          | Name                             | Category ID
 11209       | Tyre 21 x 9.9                    | 29         
 11640pr0003 | ELECTRIC GUITAR SHAFT Ø3.2 NO. 3 | 27
 ```
+
