@@ -2,9 +2,19 @@ import { getFileContent } from "./library/file.ts";
 import { getStandardInput } from "./library/process.ts";
 import { transpose, getLines, getColumns } from "./library/string.ts";
 
+function isSeparationLine(line: string[]): boolean {
+  return line.every(column => {
+    return column.trim().split("").every(character => {
+      return character === "-";
+    });
+  });
+}
+
 export function alignMarkdownTable(separator: string, content: string): string {
   const lines = getLines(content).map(line => {
     return getColumns(separator, line);
+  }).filter(line => {
+    return !isSeparationLine(line);
   });
 
   if (lines.length === 0 ) {
