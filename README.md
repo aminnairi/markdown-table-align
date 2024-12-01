@@ -88,3 +88,7 @@ ID          | Name                             | Category ID
 11640pr0003 | ELECTRIC GUITAR SHAFT Ø3.2 NO. 3 | 27
 ```
 
+## License
+
+See [`LICENSE`](./LICENSE).
+
