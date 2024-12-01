@@ -6,6 +6,7 @@ Align your markdown table
 
 - [Deno](https://deno.com/)
 - [Git](https://git-scm.com/)
+- [Bash](https://www.gnu.org/software/bash/), or [Zsh](https://www.zsh.org/), or [Fish](https://fishshell.com/), or any GNU/Linux shell
 
 ## Clone
 
